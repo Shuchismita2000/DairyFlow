@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DairyFlow App</title>
+    <style>
+      :root {
+        color-scheme: light dark;
+        font-family: Inter, Arial, sans-serif;
+      }
+
+      body {
+        margin: 0;
+        background: #0f172a;
+        color: #f8fafc;
+      }
+
+      .topbar {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.75rem;
+        justify-content: center;
+        padding: 1rem;
+        background: #111827;
+        border-bottom: 1px solid #334155;
+      }
+
+      .topbar button {
+        border: 1px solid #38bdf8;
+        background: transparent;
+        color: #f8fafc;
+        padding: 0.65rem 1rem;
+        border-radius: 999px;
+        cursor: pointer;
+        font-weight: 600;
+      }
+
+      .topbar button:hover {
+        background: #38bdf8;
+        color: #0f172a;
+      }
+
+      iframe {
+        width: 100%;
+        height: calc(100vh - 78px);
+        border: 0;
+        background: white;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="topbar">
+      <button onclick="loadPage('app/dairyflow_landing_page.html')">Landing Page</button>
+      <button onclick="loadPage('app/dairyflow_console.html')">Console</button>
+      <button onclick="loadPage('app/dairyflow_eda_dashboard.html')">EDA Dashboard</button>
+    </div>
+
+    <iframe id="appFrame" src="app/dairyflow_landing_page.html" title="DairyFlow app"></iframe>
+
+    <script>
+      function loadPage(page) {
+        document.getElementById('appFrame').src = page;
+      }
+    </script>
+  </body>
+</html>
